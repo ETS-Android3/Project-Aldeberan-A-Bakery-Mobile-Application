@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="product"
+            type="com.example.aldeberan.structures.Product"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cusProdImgView"
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+            app:layout_constraintDimensionRatio="3:3"
+            tools:srcCompat="@tools:sample/avatars"
+        </ImageView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/blue_update"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/cusProdIDLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="Item ID"
+                app:layout_constraintBottom_toTopOf="@+id/cusProdNameLbl"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:layout_editor_absoluteX="5dp" />
+
+            <TextView
+                android:id="@+id/cusProdNameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="Item Name"
+                app:layout_constraintBottom_toTopOf="@+id/cusProdPriceLbl"
+                app:layout_constraintStart_toStartOf="@+id/cusProdIDLbl"
+                app:layout_constraintTop_toBottomOf="@+id/cusProdIDLbl" />
+
+            <TextView
+                android:id="@+id/cusProdPriceLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="Item Price"
+                app:layout_constraintBottom_toTopOf="@+id/cusProdSKULbl"
+                app:layout_constraintStart_toStartOf="@+id/cusProdNameLbl"
+                app:layout_constraintTop_toBottomOf="@+id/cusProdNameLbl" />
+
+            <TextView
+                android:id="@+id/cusProdSKULbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="Item Description"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/button_add_cart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cusProdPriceLbl" />
+
+            
+            <!--com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/quantityButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_add_cart"
+                app:layout_constraintStart_toStartOf="@+id/cusProdSKULbl"
+                app:layout_constraintTop_toBottomOf="@+id/cusProdSKULbl"
+                app:textColor="#ffffff">
+            </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton-->
+
+            <Button
+                android:id="@+id/button_add_cart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/quantityButton"
+                app:layout_constraintTop_toBottomOf="@+id/cusProdSKULbl"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>
